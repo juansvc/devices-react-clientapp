@@ -1,70 +1,32 @@
-# Getting Started with Create React App
+# Devices
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+@juan-vivanco
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+A React Frontend task for NinjaRMM of a client web application to work with devices.
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- [React JS](https://reactjs.org/)
+- [Axios](https://github.com/axios/axios) fetching API data
+- [Material UI](https://material-ui.com/) icons and UI elements
+- [Jest](https://jestjs.io/) testing
+- [Prettier](https://prettier.io/) formatting the project's code
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Process
 
-### `npm test`
+I started off using `create-react-app` to build out the framework for the CRUD functionality, before implementing filters and more customization. I decided to use a table to display the devices data, since it was easier and more intuitive for users to have column sorting. I decided to focus on using React hooks instead of Redux for managing state. I added tests once the basic structure was in placed and worked on improving the application's UI.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Installation
 
-### `npm run build`
+- `git clone` this repo and `cd` into the `devices-clientapp` folder
+- `npm i` to install dependencies
+- `npm run dev` and `y` to run frontend app
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+If you include changes, use `npm run format` for prettier
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## JFYI
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- I used a search input instead of using dropdown for user can filter devices by one Type, because I think it is more functional in terms of ux and user friendliness.
+- I used a button in table instead of using dropdown for user can sort devices by system name and HDD Capacity, because I think it is more functional in terms of ux and user friendliness. 
