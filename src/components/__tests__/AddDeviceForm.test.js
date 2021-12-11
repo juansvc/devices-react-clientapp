@@ -1,8 +1,8 @@
 import React from "react";
 import renderer from "react-test-renderer";
-import AddDeviceForm from "../AddDeviceForm";
+import UpdateDeviceForm from "../UpdateDeviceForm";
 
 it("renders correctly", () => {
-  const tree = renderer.create(<AddDeviceForm />).toJSON();
+  const tree = renderer.create(<UpdateDeviceForm />).toJSON();
   expect(tree).toMatchSnapshot();
 });

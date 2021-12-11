@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
 import DevicesTable from "./components/DevicesTable";
-import AddDeviceForm from "./components/AddDeviceForm";
-import EditDeviceForm from "./components/EditDeviceForm";
+import UpdateDeviceForm from "./components/UpdateDeviceForm";
 import Pagination from "./components/Pagination";
 import Modal from "./components/Modal";
 import useModal from "./hooks/useModal";
@@ -86,7 +85,7 @@ const App = () => {
           isShowing={isShowing}
           hide={toggle}
           content={
-            <EditDeviceForm
+            <UpdateDeviceForm
               setEditing={setEditing}
               currentDevice={currentDevice}
               updateDevice={updateDevice}
@@ -97,7 +96,7 @@ const App = () => {
         <Modal
           isShowing={isShowing}
           hide={toggle}
-          content={<AddDeviceForm addDevice={addDevice} />}
+          content={<UpdateDeviceForm addDevice={addDevice} />}
         />
       )}
       <DevicesTable

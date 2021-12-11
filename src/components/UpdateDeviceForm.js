@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from "react";
 
-const EditDeviceForm = (props) => {
-  const [device, setDevice] = useState(props.currentDevice);
+const UpdateDeviceForm = (props) => {
+  const initialFormState = {
+    id: null,
+    system_name: "",
+    type: "",
+    hdd_capacity: "",
+  };
+  const [device, setDevice] = useState(props.currentDevice ? props.currentDevice : initialFormState);
 
   useEffect(() => {
-    setDevice(props.currentDevice);
+    setDevice(props.currentDevice ? props.currentDevice : initialFormState);
   }, [props]);
 
   const handleInputChange = (event) => {
@@ -17,11 +23,12 @@ const EditDeviceForm = (props) => {
     <form
       onSubmit={(event) => {
         event.preventDefault();
-        props.updateDevice(device.id, device);
+        props.currentDevice ? props.updateDevice(device.id, device) : props.addDevice(device);
+        !props.currentDevice ?? setDevice(initialFormState);
       }}
     >
       <div className="form-group">
-        <h2>Edit Device</h2>
+        <h2>{props.currentDevice ? 'Edit Device' : 'Add Device'}</h2>
         <label>System Name</label>
         <input
           type="text"
@@ -51,9 +58,9 @@ const EditDeviceForm = (props) => {
           required
         />
       </div>
-      <button className="modal-button">Update device</button>
+      <button className="modal-button">{props.currentDevice ? 'Update' : 'Add'}</button>
     </form>
   );
 };
 
-export default EditDeviceForm;
+export default UpdateDeviceForm;
