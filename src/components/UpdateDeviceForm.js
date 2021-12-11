@@ -35,6 +35,7 @@ const UpdateDeviceForm = (props) => {
           name="system_name"
           value={device.system_name}
           onChange={handleInputChange}
+          pattern="[a-zA-Z0-9-]+"
           required
         />
       </div>
@@ -45,6 +46,7 @@ const UpdateDeviceForm = (props) => {
           name="type"
           value={device.type}
           onChange={handleInputChange}
+          pattern="[a-zA-Z]+"
           required
         />
       </div>
@@ -55,6 +57,7 @@ const UpdateDeviceForm = (props) => {
           name="hdd_capacity"
           value={device.hdd_capacity}
           onChange={handleInputChange}
+          pattern="[0-9-]+"
           required
         />
       </div>

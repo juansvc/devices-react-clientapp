@@ -105,7 +105,7 @@ const DevicesTable = (props) => {
                 <tr key={device.id}>
                   <td>{device.system_name}</td>
                   <td>{device.type}</td>
-                  <td>{device.hdd_capacity}</td>
+                  <td>{device.hdd_capacity} GB</td>
                   <td>
                     <IconButton
                       aria-label="edit"
