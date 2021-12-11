@@ -11,6 +11,13 @@ const useSortableData = (devices, config = null) => {
     let sortableDevices = [...devices];
     if (sortConfig !== null) {
       sortableDevices.sort((a, b) => {
+        if (sortConfig.number === true){
+          a = Number(a);
+          b = Number(b);
+          if (a.length === b.length) {
+            return a > b ? 1 : -1;
+          }
+        }
         if (a[sortConfig.key] < b[sortConfig.key]) {
           return sortConfig.direction === "ascending" ? -1 : 1;
         }
@@ -25,6 +32,10 @@ const useSortableData = (devices, config = null) => {
 
   const requestSort = (key) => {
     let direction = "ascending";
+    let number = false;
+    if (key === "hdd_capacity"){
+      number = true;
+    }
     if (
       sortConfig &&
       sortConfig.key === key &&
@@ -32,7 +43,7 @@ const useSortableData = (devices, config = null) => {
     ) {
       direction = "descending";
     }
-    setSortConfig({ key, direction });
+    setSortConfig({ key, direction, number });
   };
 
   return { devices: sortedDevices, requestSort, sortConfig };
