@@ -47,12 +47,15 @@ const App = () => {
   const editDevice = (device) => {
     setEditing(true);
     toggle();
-    setCurrentDevice({
-      id: device.id,
-      system_name: device.system_name,
-      type: device.type,
-      hdd_capacity: device.hdd_capacity,
-    });
+    axios.put(
+      `http://localhost:3000/devices/${device.id}`,
+      {
+        id: device.id,
+        system_name: device.system_name,
+        type: device.type,
+        hdd_capacity: device.hdd_capacity,
+      }
+    );
   };
 
   const updateDevice = (id, updatedDevice) => {
@@ -62,7 +65,7 @@ const App = () => {
   };
 
   const deleteDevice = (id) => {
-    setDevices(devices.filter((device) => device.id !== id));
+    axios.delete(`http://localhost:3000/devices/${id}`);
   };
 
   // pagination
