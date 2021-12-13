@@ -33,7 +33,10 @@ const App = () => {
       )
       .then((data) => {
         setDevices(data);
-      });
+      })
+      .catch((error) => {
+        console.log(error);
+      })
   }, []);
 
   // incrementing ids + adding placeholder image manually
@@ -55,7 +58,10 @@ const App = () => {
         type: device.type,
         hdd_capacity: device.hdd_capacity,
       }
-    );
+    )
+    .catch((error) => {
+      console.log(error);
+    });
   };
 
   const updateDevice = (id, updatedDevice) => {
@@ -65,7 +71,10 @@ const App = () => {
   };
 
   const deleteDevice = (id) => {
-    axios.delete(`http://localhost:3000/devices/${id}`);
+    axios.delete(`http://localhost:3000/devices/${id}`)
+    .catch((error) => {
+      console.log(error);
+    });
   };
 
   // pagination
