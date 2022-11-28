@@ -1,10 +1,8 @@
 # Devices
 
-@juan-vivanco
-
 ## Overview
 
-A React Frontend task for NinjaRMM of a client web application to work with devices.
+A React Frontend web application to work with devices.
 
 ## Technologies Used
 
