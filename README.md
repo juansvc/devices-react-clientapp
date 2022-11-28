@@ -18,7 +18,7 @@ I started off using `create-react-app` to build out the framework for the CRUD f
 
 ## Installation
 
-- `git clone` this repo and `cd` into the `devices-clientapp` folder
+- `git clone` this repo
 - `npm i` to install dependencies
 - `npm run dev` and `y` to run frontend app
 
